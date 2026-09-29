@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-base: #FFFFFF;
+    --color-black: #000000;
+    --color-red: #DC2626;
+    --color-red-light: #EF4444;
+    --color-dark: #18181B;
+    --color-surface-subtle: #F8FAFC;
+    --color-border: #E2E8F0;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+.font-display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle scientific grid pattern on white base */
+.bg-grid-pattern-light {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glow-red-subtle {
+  box-shadow: 0 0 20px -3px rgba(220, 38, 38, 0.25);
+}
+
+.glow-black-subtle {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.12);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #DC2626;
+}
+
+/* Print optimizations for external scientific dossier documentation */
+@media print {
+  header, nav, .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

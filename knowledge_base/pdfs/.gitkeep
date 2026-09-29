@@ -1,0 +1,2 @@
+# Place raw PDF documents here for automated RAG ingestion
+# Supported formats: .pdf, .txt, .md, .docx

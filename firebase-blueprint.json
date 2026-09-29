@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "Subject": {
+      "title": "Subject",
+      "description": "Synthetic Humanoid Robot Profile with Mind Architecture and Weak Zones",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "name": { "type": "string" },
+        "age": { "type": "number" },
+        "occupation": { "type": "string" },
+        "environment": { "type": "string" },
+        "familyEnvironment": { "type": "string" },
+        "relationshipStatus": { "type": "string" },
+        "currentStateSummary": { "type": "string" },
+        "importantThings": { "type": "array" },
+        "weakZones": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "code", "name"]
+    },
+    "ResearchCase": {
+      "title": "ResearchCase",
+      "description": "Behavioral Evaluation Protocol Case Dossier",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "name": { "type": "string" },
+        "environment": { "type": "string" },
+        "status": { "type": "string" },
+        "objective": { "type": "string" },
+        "description": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "code", "name"]
+    }
+  },
+  "firestore": {
+    "/subjects/{subjectId}": {
+      "schema": "Subject",
+      "description": "Monitored synthetic humanoid cohort subjects"
+    },
+    "/cases/{caseId}": {
+      "schema": "ResearchCase",
+      "description": "Scientific behavioral research evaluation cases"
+    }
+  }
+}
